@@ -5,7 +5,20 @@ const Flight = require('../models/flight')
 module.exports = {
     new: newFlight,
     create,
-    index
+    index,
+    show
+}
+
+
+// function to show each individuall flight when clicking on details
+function show(req, res){
+
+    Flight.findById(req.params.id, function(err, flightDoc){
+
+        console.log(req.body)
+        console.log(flightDoc)
+        res.render('flights/show',{flight: flightDoc})
+    })
 }
 
 // Add all of the flights in the DB to the flights page
