@@ -1,6 +1,8 @@
 // require in the model so we can talk to the database
 const Flight = require('../models/flight')
 
+const Ticket = require('../models/ticket')
+
 
 module.exports = {
     new: newFlight,
@@ -15,9 +17,13 @@ function show(req, res){
 
     Flight.findById(req.params.id, function(err, flightDoc){
 
-        console.log(req.body)
-        console.log(flightDoc)
-        res.render('flights/show',{flight: flightDoc})
+        Ticket.find({flight: flightDoc._id}, function(err, ticketDocs){
+
+
+            console.log(req.body)
+            console.log(flightDoc)
+            res.render('flights/show',{flight: flightDoc, ticket: ticketDocs})
+        })
     })
 }
 

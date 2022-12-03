@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+<%- include('../partials/header') %>
+
 
   <body>
     <h1>Flight Details</h1>
@@ -24,6 +21,15 @@
 			<%= flight.departs%>
         </div>
 	</section>
+    <br> <br>
+    <div>Tickets:</div>
+    <ul>
+        <% ticket.forEach(t => { %>
+         <li>Seat: <%= t.seat %> Price: <%= t.price%></li>
+        <% }) %>
+      </ul>
+
+    <a href="/flights/<%= flight.id %>/tickets/new">ADD NEW TICKET</a>
 
 	<br><br>
 	<h2>Add Destination</h2>
@@ -63,6 +69,6 @@
 		  </tbody>
 		</table>
 	  <% } else { %>
-		<h5>No Reviews Yet</h5>
+		<h5>No Destinations Yet</h5>
 	  <% } %>
 </body>
