@@ -7,20 +7,8 @@ const Ticket = require('../models/ticket')
 module.exports = {
     new: newTicket,
     create,
-    addTicketsToFlight
 }
 
-async function addTicketsToFlight(req, res){
-    try{
-        const flightDoc = await Flight.findById(req.params.id)
-        
-        
-
-    } catch(err){
-
-
-    }
-}
 
 async function create (req, res){
     console.log('YOOOOOOOO')

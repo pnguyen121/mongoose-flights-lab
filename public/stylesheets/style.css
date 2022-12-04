@@ -1,3 +1,7 @@
+
+/* add in bootstrap */
+
+
 * {
   box-sizing: border-box;
   font-family: Helvetica;
@@ -131,7 +135,7 @@ table td {
 
  ul {
   margin: 0 0 1rem;
-  padding: 0;
+  padding: 0 !important; 
   list-style: none;
 }
 	

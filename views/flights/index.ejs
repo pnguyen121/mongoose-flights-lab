@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
   <body>
-    <h1>This is the flights index page</h1>
-    <h1>Flight List</h1>
+    <h1 class="p-3 text-uppercase">Flight List</h1>
+    <br>
   <table>
     <thead>
       <tr>
@@ -20,7 +20,7 @@
             <td><%= f.airport %></td>
             <td><%= f.flightNo %></td>
             <td><%= f.departs %></td>
-            <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
+            <td><a href="/flights/<%= f._id %>" class="btn btn-outline-primary">DETAILS</a></td>
           </tr>
        
       <% }) %>

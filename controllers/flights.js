@@ -20,8 +20,9 @@ function show(req, res){
         Ticket.find({flight: flightDoc._id}, function(err, ticketDocs){
 
 
-            console.log(req.body)
-            console.log(flightDoc)
+            console.log(req.body, 'REQ.BODY')
+            console.log(flightDoc, 'FLIGHT DOC')
+            console.log(ticketDocs, 'TICKETDOS')
             res.render('flights/show',{flight: flightDoc, ticket: ticketDocs})
         })
     })

@@ -8,10 +8,6 @@ router.get('/flights/:id/tickets/new', ticketsCtrl.new)
 // associate a ticket with a flight
 router.post('/flights/:id/tickets', ticketsCtrl.create)
 
-// show all of the ticketss on flight detail page
-router.post('/flights/:id/tickets', ticketsCtrl.addTicketsToFlight)
-
-
 
 
 module.exports = router;

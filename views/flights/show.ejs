@@ -2,7 +2,7 @@
 
 
   <body>
-    <h1>Flight Details</h1>
+    <h1 class="p-3 text-uppercase">Flight Details</h1>
     <section id="show-page">
 		<div>Airline: </div>
 		<div>
@@ -25,16 +25,18 @@
     <div>Tickets:</div>
     <ul>
         <% ticket.forEach(t => { %>
-         <li>Seat: <%= t.seat %> Price: <%= t.price%></li>
+         <li class="text-center p-0">Seat: <%= t.seat %> Price: $<%= t.price%></li>
         <% }) %>
       </ul>
 
-    <a href="/flights/<%= flight.id %>/tickets/new">ADD NEW TICKET</a>
+    <a href="/flights/<%= flight.id %>/tickets/new" class="btn btn-outline-primary">ADD NEW TICKET</a>
 
 	<br><br>
 	<h2>Add Destination</h2>
+    <br>
+    <div class="form-group">
 	<form id="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destinations">
-		<label>Destination Airport</label>
+		<label>Destination Airport:</label>
 		<select name="airport">
 			<option value="AUS">AUS</option>
 			<option value="DFW">DFW</option>
@@ -42,11 +44,13 @@
 			<option value="LAX">LAX</option>
 			<option value="SAN" selected>SAN</option>
 		</select>
-        <label>Departs
+        <label>Departs:
             <input type="datetime-local" name="arrival">
           </label>
-		<input type="submit" value="Add Destination">
+		<input type="submit" value="Add Destination" class="btn btn-primary btn-sm">
 	</form>
+    </div>
+    
 
 
 	<% if (flight.destinations.length) { %>
