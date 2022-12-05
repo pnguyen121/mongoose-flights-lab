@@ -23,6 +23,8 @@ function show(req, res){
             console.log(req.body, 'REQ.BODY')
             console.log(flightDoc, 'FLIGHT DOC')
             console.log(ticketDocs, 'TICKETDOS')
+            console.log(req.params.id)
+            console.log(ticketDocs[1]._id)
             res.render('flights/show',{flight: flightDoc, ticket: ticketDocs})
         })
     })

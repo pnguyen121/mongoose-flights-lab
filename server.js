@@ -4,12 +4,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const methodOverride = require('method-override')
+
 var indexRouter = require('./routes/index');
 var flightsRouter = require('./routes/flights');
 const destinationsRouter = require('./routes/destinations')
 const ticketsRouter = require('./routes/tickets')
 
 var app = express();
+
+app.use(methodOverride('_method'))
 
 // require in the database so we can use it
 require('./config/database');

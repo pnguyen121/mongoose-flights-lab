@@ -1,13 +1,13 @@
 <%- include('../partials/header') %>
 
-<h1>ADD TICKET PAGE</h1>
+<h1 class="text-uppercase">Enter New Ticket</h1>
 
 
   <form id="add-ticket-form" action="/flights/<%= flight %>/tickets" method="POST">
     <label>Seat:</label>
-    <input type="text" name="seat">
+    <input type="text" name="seat" placeholder="Ex: A21">
     <label>Price:</label>
-    <input type="number" name="price">
+    <input type="number" name="price" placeholder="Enter Number">
     <input type="submit" value="Add Ticket">
   </form>
   
