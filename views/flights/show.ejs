@@ -28,6 +28,7 @@
          <li class="text-center p-0">Seat: <%= t.seat %> Price: $<%= t.price%>
 
          <!-- <form action="/flights/<%= flight.id %>?_method=DELETE" method="POST" class="delete-form"> -->
+            <!-- FORM ACTIONS SHOULD MATCH A ROUTE TO KNOW WHAT TO DO -->
          <form action="/tickets/<%= t.id %>?_method=DELETE" method="POST" class="delete-form">
             <button type="Submit">X</button>
           </form>
